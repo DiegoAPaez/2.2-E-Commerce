@@ -1,35 +1,77 @@
-// => Reminder, it's extremely important that you debug your code.
-// ** It will save you a lot of time and frustration!
-// ** You'll understand the code better than with console.log(), and you'll also find errors faster.
-// ** Don't hesitate to seek help from your peers or your mentor if you still struggle with debugging.
+import { getData } from "./dataGetter.js";
 
-// Improved version of cartList. Cart is an array of products (objects), but each one has a quantity field to define its quantity, so these products are not repeated.
-var cart = [];
+const cartList = document.querySelector("#cart_list");
+const cartTotal = document.querySelector("#total_price");
 
-var total = 0;
+export let products = await getData();
+export let cart = [];
+export let total = 0;
 
 // Exercise 1
-const buy = (id) => {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cart array
+export const buy = (id) => {
+    const newItem = products.find((product) => product.id === id);
+    if (cart.includes(newItem)) {
+        let position = cart.indexOf(newItem);
+        cart[position].quantity += 1;
+    } else {
+        newItem.quantity = 1;
+        cart.push(newItem);
+    }
+    calculateTotal();
+    applyPromotionsCart();
 };
 
 // Exercise 2
-const cleanCart = () => {};
+export const cleanCart = () => {
+    cart = [];
+    total = 0;
+};
 
 // Exercise 3
-const calculateTotal = () => {
-    // Calculate total price of the cart using the "cartList" array
+export const calculateTotal = () => {
+    total = 0;
+    cart.forEach((product) => {
+        total += product.price * product.quantity;
+    });
 };
 
 // Exercise 4
-const applyPromotionsCart = () => {
-    // Apply promotions to each item in the array "cart"
+export const applyPromotionsCart = () => {
+    cart.forEach((product) => {
+        if (product.hasOwnProperty("offer")) {
+            const {
+                price,
+                quantity,
+                offer: { number, percent },
+            } = product;
+            if (quantity >= number) {
+                const discount = percent / 100;
+                const fullPrice = price * quantity;
+                total -= fullPrice * discount;
+            }
+        }
+    });
 };
 
 // Exercise 5
-const printCart = () => {
+export const printCart = () => {
+    // Remove rows created previously to avoid repetition
+    while (cartList.firstChild) {
+        cartList.removeChild(cartList.firstChild);
+    }
     // Fill the shopping cart modal manipulating the shopping cart dom
+    cart.forEach((product) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+             <th scope="row">${product.name}</th>
+             <td>$${product.price}</td>
+             <td>${product.quantity}</td>
+             <td>$${product.price * product.quantity}</td>
+        `;
+        cartList.appendChild(row);
+    });
+
+    cartTotal.innerHTML = `${total}`;
 };
 
 // ** Nivell II **
@@ -37,6 +79,6 @@ const printCart = () => {
 // Exercise 7
 const removeFromCart = (id) => {};
 
-const open_modal = () => {
+export const open_modal = () => {
     printCart();
 };
