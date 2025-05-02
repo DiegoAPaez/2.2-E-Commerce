@@ -1,20 +1,20 @@
 // Exercise 6
 const validate = () => {
-    var error = 0;
+    let error = 0;
     // Get the input fields
-    var fName = document.getElementById("fName");
-    var fEmail = document.getElementById("fEmail");
+    const fieldName = document.getElementById("fName");
+    const fieldEmail = document.getElementById("fEmail");
 
     // Get the error elements
-    var errorName = document.getElementById("errorName");
-    var errorEmail = document.getElementById("errorEmail");
+    const errorName = document.getElementById("errorName");
+    const errorEmail = document.getElementById("errorEmail");
 
     // Validate fields entered by the user: name, phone, password, and email
-    if (fName.value == "") {
+    if (fieldName.value == "") {
         error++;
     }
 
-    if (fEmail.value == "") {
+    if (fieldEmail.value == "") {
         error++;
     }
 
