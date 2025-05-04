@@ -1,4 +1,4 @@
-import { getData } from "./dataGetter.js";
+import {getData} from "./dataGetter.js";
 
 const cartList = document.querySelector("#cart_list");
 const cartTotal = document.querySelector("#total_price");
@@ -9,8 +9,7 @@ export const cart = [];
 export let total = 0;
 
 export async function initializeProducts() {
-    const data = await getData();
-    return data;
+    return await getData();
 }
 
 products = await initializeProducts();
@@ -97,8 +96,7 @@ const calculateOfferTotal = (product) => {
             return product.price * product.quantity;
         }
     } else {
-        const price = product.price * product.quantity;
-        return price;
+        return product.price * product.quantity;
     }
 };
 
