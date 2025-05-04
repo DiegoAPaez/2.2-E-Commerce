@@ -1,26 +1,17 @@
 // Exercise 6
-const validate = () => {
-    let error = 0;
-    // Get the input fields
-    const fieldName = document.getElementById("fName");
-    const fieldEmail = document.getElementById("fEmail");
+(() => {
+    'use strict'
+    const form = document.querySelector('.needs-validation')
 
-    // Get the error elements
-    const errorName = document.getElementById("errorName");
-    const errorEmail = document.getElementById("errorEmail");
+    form.addEventListener('submit', (event) => {
+        const pass = document.querySelector('#fPassword').value;
+        const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{4,}$/;
+        const passIsValid = regex.test(pass);
 
-    // Validate fields entered by the user: name, phone, password, and email
-    if (fieldName.value == "") {
-        error++;
-    }
-
-    if (fieldEmail.value == "") {
-        error++;
-    }
-
-    if (error > 0) {
-        alert("Error");
-    } else {
-        alert("OK");
-    }
-};
+        if (!form.checkValidity() || !passIsValid) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+    }, false)
+})();
