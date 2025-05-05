@@ -84,21 +84,21 @@
 				<div class="col-sm-6">
 					<div class="mt-3">
 						<label for="fName" class="form-label">First Name:</label>
-						<input id="fName" class="form-control ml-3" type="text" placeholder="First Name" minlength="3" required/>
+						<input id="fName" class="form-control ml-3" pattern="[A-Za-z].{3,}" type="text" placeholder="First Name" minlength="3" required/>
 						<div id="errorName" class="invalid-feedback">This field is required and must have, at least, 3
 							characters
 						</div>
 					</div>
 					<div class="mt-3 ">
 						<label for="fEmail" class="form-label">Email:</label>
-						<input id="fEmail" class="form-control ml-3" type="email" placeholder="Email" minlength="3" required/>
+						<input id="fEmail" class="form-control ml-3" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" type="email" placeholder="Email" minlength="3" required/>
 						<div id="errorEmail" class="invalid-feedback">This field is required and must contain an '@' and
 							have, at
 							least, 3 characters</div>
 					</div>
 					<div class="mt-3 ">
 						<label for="fAddress" class="form-label">Address:</label>
-						<input id="fAddress" class="form-control" type="text" placeholder="Address" minlength="3" required/>
+						<input id="fAddress" class="form-control" pattern="[A-Za-z0-9].{3,}" type="text" placeholder="Address" minlength="3" required/>
 						<div id="errorAddress" class="invalid-feedback">This field is required and must have, at least,
 							3 characters
 						</div>
@@ -107,7 +107,7 @@
 				<div class="col-sm-6">
 					<div class="mt-3">
 						<label for="fLastN" class="form-label">Last Name:</label>
-						<input id="fLastN" class="form-control" type="text" placeholder="Last Name" minlength="3" required/>
+						<input id="fLastN" class="form-control" pattern="[A-Za-z].{3,}" type="text" placeholder="Last Name" minlength="3" required/>
 						<div id="errorLastN" class="invalid-feedback">This field is required and must have, at least, 3
 							characters
 						</div>
