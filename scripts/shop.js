@@ -1,42 +1,128 @@
-// => Reminder, it's extremely important that you debug your code.
-// ** It will save you a lot of time and frustration!
-// ** You'll understand the code better than with console.log(), and you'll also find errors faster.
-// ** Don't hesitate to seek help from your peers or your mentor if you still struggle with debugging.
+import {getData} from "./dataGetter.js";
 
-// Improved version of cartList. Cart is an array of products (objects), but each one has a quantity field to define its quantity, so these products are not repeated.
-var cart = [];
+const cartList = document.querySelector("#cart_list");
+const cartTotal = document.querySelector("#total_price");
+const cartItemsCount = document.querySelector("#count_product");
 
-var total = 0;
+export let products = [];
+export const cart = [];
+export let total = 0;
+
+export async function initializeProducts() {
+    return await getData();
+}
+
+products = await initializeProducts();
 
 // Exercise 1
-const buy = (id) => {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cart array
+export const buy = (id) => {
+    try {
+        const newItem = products.find((product) => product.id === id);
+
+        if (!newItem) return;
+
+        const existingItemIndex = cart.findIndex((item) => item.id === id);
+
+        if (existingItemIndex !== -1) {
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            cart.push({ ...newItem, quantity: 1 });
+        }
+
+        calculateTotal();
+        updateProductCount();
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 // Exercise 2
-const cleanCart = () => {};
-
-// Exercise 3
-const calculateTotal = () => {
-    // Calculate total price of the cart using the "cartList" array
+export const cleanCart = () => {
+    cart.length = 0;
+    total = 0;
+    printCart();
 };
 
-// Exercise 4
-const applyPromotionsCart = () => {
-    // Apply promotions to each item in the array "cart"
+// Exercise 3 & Exercise 4
+export const calculateTotal = () => {
+    total = 0;
+    cart.forEach((product) => {
+        total += calculateOfferTotal(product);
+    });
 };
 
 // Exercise 5
-const printCart = () => {
+export const printCart = () => {
+    // Remove rows created previously to avoid repetition
+    while (cartList.firstChild) {
+        cartList.removeChild(cartList.firstChild);
+    }
     // Fill the shopping cart modal manipulating the shopping cart dom
+    cart.forEach((product) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+             <th scope="row">${product.name}</th>
+             <td>$${product.price}</td>
+             <td>
+                ${product.quantity}
+                <button class="btn btn-sm btn-outline-danger ms-2 px-2 rounded remove-from-cart" type="button" data-product-id="${
+                    product.id
+                }">
+                    -
+                </button>
+            </td>
+             <td>
+            $${calculateOfferTotal(product).toFixed(2)}
+            </td>
+        `;
+        cartList.appendChild(row);
+    });
+
+    cartTotal.innerHTML = `${parseFloat(total).toFixed(2)}`;
+};
+
+const calculateOfferTotal = (product) => {
+    if (product.hasOwnProperty("offer")) {
+        const {
+            price,
+            quantity,
+            offer: { number, percent },
+        } = product;
+        if (quantity >= number) {
+            const discount = 1 - percent / 100;
+            const fullPrice = price * quantity;
+            return fullPrice * discount;
+        } else {
+            return product.price * product.quantity;
+        }
+    } else {
+        return product.price * product.quantity;
+    }
+};
+
+const updateProductCount = () => {
+    cartItemsCount.innerHTML = `${cart.length}`;
 };
 
 // ** Nivell II **
 
 // Exercise 7
-const removeFromCart = (id) => {};
+export const removeFromCart = (id) => {
+    const cartItem = cart.find((product) => product.id === id);
 
-const open_modal = () => {
+    if (cartItem.quantity > 1) {
+        cartItem.quantity -= 1;
+    } else {
+        const index = cart.findIndex((item) => item.id === id);
+        if (index !== -1) {
+            cart.splice(index, 1);
+        }
+    }
+    calculateTotal();
+    updateProductCount();
+    printCart();
+};
+
+export const open_modal = () => {
     printCart();
 };
