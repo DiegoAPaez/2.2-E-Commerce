@@ -1,64 +1,102 @@
-[
-    {
-        "id": 1,
-        "name": "Cooking Oil",
-        "price": 10.5,
-        "type": "grocery",
-        "offer": {
-            "number": 3,
-            "percent": 20
+{
+    "T-shirts": [
+        {
+            "id": 1,
+            "name": "JavaScript",
+            "price": 19.99,
+            "img": "js-t-shirt.webp"
+        },
+        {
+            "id": 2,
+            "name": "Sudo",
+            "price": 15.99,
+            "img": "sudo-t-shirt.webp"
+        },
+        {
+            "id": 3,
+            "name": "React",
+            "price": 24.99,
+            "img": "react-t-shirt.webp"
         }
-    },
-    {
-        "id": 2,
-        "name": "Pasta",
-        "price": 6.25,
-        "type": "grocery"
-    },
-    {
-        "id": 3,
-        "name": "Instant Cupcake Mixture",
-        "price": 5,
-        "type": "grocery",
-        "offer": {
-            "number": 10,
-            "percent": 30
+    ],
+    "Mugs": [
+        {
+            "id": 4,
+            "name": "Angular",
+            "price": 10,
+            "img": "angular-mug.webp",
+            "offer": {
+                "number": 3,
+                "percent": 20
+            }
+        },
+        {
+            "id": 5,
+            "name": "Bug Free",
+            "price": 12,
+            "img": "bug-free-mug.webp"
+        },
+        {
+            "id": 6,
+            "name": "TypeScript",
+            "price": 10,
+            "img": "ts-mug.webp",
+            "offer": {
+                "number": 3,
+                "percent": 20
+            }
         }
-    },
-    {
-        "id": 4,
-        "name": "All-in-one",
-        "price": 260,
-        "type": "beauty"
-    },
-    {
-        "id": 5,
-        "name": "Zero Make-up Kit",
-        "price": 20.5,
-        "type": "beauty"
-    },
-    {
-        "id": 6,
-        "name": "Lip Tints",
-        "price": 12.75,
-        "type": "beauty"
-    },
-    {
-        "id": 7,
-        "name": "Lawn Dress",
-        "price": 15,
-        "type": "clothes"
-    },
-    {
-        "id": 8,
-        "name": "Lawn-Chiffon Combo",
-        "price": 19.99,
-        "type": "clothes"
-    },
-    {
-        "id": 9,
-        "name": "Toddler Frock",
-        "price": 9.99,
-        "type": "clothes"
-    }
-]
+    ],
+    "Wall-Art": [
+        {
+            "id": 7,
+            "name": "Effort",
+            "price": 19,
+            "img": "effort-art.webp"
+        },
+        {
+            "id": 8,
+            "name": "Mindset",
+            "price": 16,
+            "img": "mindset-art.webp"
+        },
+        {
+            "id": 9,
+            "name": "Work Hard",
+            "price": 19,
+            "img": "work-art.webp"
+        }
+    ],
+    "Stickers": [
+        {
+            "id": 10,
+            "name": "Refactor Later",
+            "price": 2.5,
+            "img": "refactor-sticker.webp",
+            "offer": {
+                "number": 5,
+                "percent": 10
+            }
+        },
+        {
+            "id": 11,
+            "name": "Docker",
+            "price": 3,
+            "img": "docker-sticker.webp",
+            "offer": {
+                "number": 5,
+                "percent": 10
+            }
+        },
+        {
+            "id": 12,
+            "name": "Works On My Machine",
+            "price": 2.3,
+            "img": "works-sticker.webp",
+            "offer": {
+                "number": 5,
+                "percent": 10
+            }
+        }
+    ]
+}
