@@ -1,4 +1,5 @@
-import {getData} from "./dataGetter.js";
+import { getData } from "./dataGetter.js";
+import { renderElements } from "./listRender.js";
 
 const cartList = document.querySelector("#cart_list");
 const cartTotal = document.querySelector("#total_price");
@@ -14,10 +15,20 @@ export async function initializeProducts() {
 
 products = await initializeProducts();
 
+renderElements(products);
+
 // Exercise 1
 export const buy = (id) => {
     try {
-        const newItem = products.find((product) => product.id === id);
+        let newItem = null;
+        
+        for (const category in products) {
+            const foundProduct = products[category].find(product => product.id === id);
+            if (foundProduct) {
+                newItem = foundProduct;
+                break;
+            }
+        }
 
         if (!newItem) return;
 
