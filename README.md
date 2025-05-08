@@ -1,56 +1,66 @@
-# 2.2-E-Commerce
+# 📚 Stage 2.2 - E-Commerce
 
-📄 Description - Exercise Statement
 
-A brief description of the exercise and the provided statement will be detailed here.
+## 🧠 Goals
 
-💻 Technologies Used
+- Put into practice JavaScript concepts.
+- Learn to manipulate a dataset.
+- Divide our code into functions and know how to reuse them.
 
-List of technologies, libraries, and tools used in the development of the exercise.
+## 🛠️ Getting Started
 
-JavaScript
-
-Jest
-
-📋 Requirements
-
-Specifications of the necessary requirements to run the project, such as software versions, dependencies, etc.
-
-Jest 29.7.0
-
-🛠️ Installation
-
-Steps required to install the project in a local environment.
-
-▶️ Execution
-
-Instructions for running the project once installed.
-
-Testing with coverage command:
+### 1️⃣ Clone this repository
 
 ```bash
-npm run test:coverage
+git clone https://github.com/DiegoAPaez/2.2-E-Commerce.git
+cd 2.2-E-Commerce
 ```
 
-This will:
+### 2️⃣ Install Dependencies
 
--   Run your tests
--   Generate a coverage report in the console
--   Create a `coverage` directory with detailed HTML reports
+Make sure you have Node.js installed. Then install the packages:
 
-The coverage report will show you:
+```bash
+npm install
+```
 
--   Statement coverage: percentage of statements executed
--   Branch coverage: percentage of branches (if/else) executed
--   Function coverage: percentage of functions called
--   Line coverage: percentage of lines executed
+### 3️⃣ Switch to `develop` branch
 
-You can also open the HTML report in your browser for a visual representation (located at `coverage/lcov-report/index.html`).
+```bash
+git checkout develop
+```
 
-🌐 Deployment
+Explore branches `level-1` and `level-3` to access specific tasks. A README file is included with details.
 
-Instructions for deploying the project in a production environment or server.
+## 📁 Project Structure
 
-🤝 Contributions
+```
+📦 develop
+┣ 📂 data/
+┣ 📂 images/
+┣ 📂 scripts/
+┣ 📂 styles/
+┣ 📄 .babelrc
+┣ 📄 checkout.html
+┣ 📄 index.html
+┗ 📄 README.md
+```
 
-Rules and guidelines for contributing to the project, if applicable.
+## 🛠 Technologies Used
+
+- Base project:
+    - HTML5
+    - CSS3 (Bootstrap)
+- Updates:
+    - JavaScript    
+
+
+![Technologie Icons](https://skillicons.dev/icons?i=html,css,bootstrap,js "Technologie Icons")
+
+## 🤝 Contributions
+
+Contributions are welcome. Please follow the [project's guidelines](CONTRIBUTING.md) for submitting changes.
+
+## ⏳ Project Status
+
+![Static Badge](https://img.shields.io/badge/In_Progress-In_Progress?style=flat-square&label=Status) ![Static Badge](https://img.shields.io/badge/Pending-Revision?style=flat-square&label=Revision&color=yellow)
