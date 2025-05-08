@@ -52,10 +52,11 @@ Explore branches `level-1` and `level-3` to access specific tasks. A README file
     - HTML5
     - CSS3 (Bootstrap)
 - Updates:
-    - JavaScript    
+    - JavaScript
+    - Babel    
 
 
-![Technologie Icons](https://skillicons.dev/icons?i=html,css,bootstrap,js "Technologie Icons")
+![Technologie Icons](https://skillicons.dev/icons?i=html,css,bootstrap,js,babel "Technologie Icons")
 
 ## 🤝 Contributions
 
