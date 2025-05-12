@@ -58,6 +58,8 @@ Explore branches `level-1` and `level-3` to access specific tasks. A README file
 
 ![Technologie Icons](https://skillicons.dev/icons?i=html,css,bootstrap,js,babel "Technologie Icons")
 
+***Babel*** is essential for using JavaScript modules as it transpiles modern JavaScript syntax (like ES modules) into backward-compatible versions, allowing you to write code with import/export statements that works across browsers including older ones that don't natively support ES modules.
+
 ## 🤝 Contributions
 
 Contributions are welcome. Please follow the [project's guidelines](CONTRIBUTING.md) for submitting changes.
