@@ -73,4 +73,4 @@ Contributions are welcome. Please follow the [project's guidelines](CONTRIBUTING
 
 ## ⏳ Project Status
 
-![Static Badge](https://img.shields.io/badge/In_Progress-In_Progress?style=flat-square&label=Status) ![Static Badge](https://img.shields.io/badge/Pending-Revision?style=flat-square&label=Revision&color=yellow)
+![Static Badge](https://img.shields.io/badge/Complete-Complete?style=flat-square&label=Status) ![Static Badge](https://img.shields.io/badge/Pending-Revision?style=flat-square&label=Revision&color=yellow)
