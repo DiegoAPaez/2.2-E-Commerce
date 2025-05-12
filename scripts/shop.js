@@ -52,6 +52,7 @@ export const cleanCart = () => {
     cart.length = 0;
     total = 0;
     printCart();
+    updateProductCount();
 };
 
 // Exercise 3 & Exercise 4
