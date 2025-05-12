@@ -7,6 +7,21 @@
 - Learn to manipulate a dataset.
 - Divide our code into functions and know how to reuse them.
 
+## 🎥 Preview
+
+### 🛍️ Store View
+![Store Preview](preview/store-preview.gif)
+
+---
+
+### ❌ Invalid Form
+![Invalid Form](preview/form-invalid.png)
+
+---
+
+### ✅ Valid Form
+![Valid Form](preview/form-valid.png)
+
 ## 🛠️ Getting Started
 
 ### 1️⃣ Clone this repository
