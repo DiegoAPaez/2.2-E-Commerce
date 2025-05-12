@@ -39,18 +39,10 @@ Make sure you have Node.js installed. Then install the packages:
 npm install
 ```
 
-### 3️⃣ Switch to `develop` branch
-
-```bash
-git checkout develop
-```
-
-Explore branches `level-1` and `level-3` to access specific tasks. A README file is included with details.
-
 ## 📁 Project Structure
 
 ```
-📦 develop
+📦 E-commerce
 ┣ 📂 data/
 ┣ 📂 images/
 ┣ 📂 scripts/
